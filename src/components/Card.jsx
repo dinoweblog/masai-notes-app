@@ -7,7 +7,7 @@ export const Card = ({
   handleBookmrks,
 }) => {
   return (
-    <div className="card" style={{}}>
+    <div className="card" style={{ marginTop: "40px" }}>
       <button
         className="iconBtn"
         onClick={() => {
@@ -19,8 +19,9 @@ export const Card = ({
 
       <h2>{item.title}</h2>
       <p>{item.desc}</p>
-      <p>{item.date}</p>
+      <p>{new Date(item.date).toJSON().slice(0, 10)}</p>
       <button
+        className="deleteBtn"
         onClick={() => {
           handleDeleteItem(item.id);
         }}

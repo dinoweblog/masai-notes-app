@@ -29,8 +29,9 @@ export const Bookmarks = () => {
           <div className="card">
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <p>{item.date}</p>
+            <p>{new Date(item.date).toJSON().slice(0, 10)}</p>
             <button
+              className="removeBtn"
               onClick={() => {
                 handleRemoveItem(item.id);
               }}

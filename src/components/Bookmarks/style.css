@@ -3,3 +3,13 @@
   grid-template-columns: repeat(4, 22%);
   justify-content: space-between;
 }
+.removeBtn {
+  background-color: transparent;
+  border-color: red;
+  color: red;
+  cursor: pointer;
+}
+
+.card {
+  margin-top: 40px;
+}
