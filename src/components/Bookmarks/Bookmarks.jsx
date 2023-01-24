@@ -20,8 +20,10 @@ export const Bookmarks = () => {
     getData();
   }, []);
 
+  if (data.length === 0) return <h2>Empty!</h2>;
+
   return (
-    <div>
+    <div style={{}}>
       <h2>Bookmarks</h2>
 
       <div className="bookmarks">

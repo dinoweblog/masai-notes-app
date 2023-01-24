@@ -47,14 +47,23 @@ export const NotesComponent = () => {
   };
 
   const handleBookmrks = (id) => {
-    console.log(id);
     const preData = JSON.parse(localStorage.getItem("bookmarks")) || [];
 
-    const filter = data.filter((item) => item.id === id);
+    const check = preData.some((item) => item.id === id);
 
-    preData.push(filter[0]);
+    if (!check) {
+      const filter = data.filter((item) => item.id === id);
 
-    localStorage.setItem("bookmarks", JSON.stringify(preData));
+      preData.push(filter[0]);
+
+      localStorage.setItem("bookmarks", JSON.stringify(preData));
+    }
+  };
+
+  const CheckBookmrks = (id) => {
+    const preData = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+    return preData.some((item) => item.id === id);
   };
 
   useEffect(() => {
@@ -74,7 +83,7 @@ export const NotesComponent = () => {
           <Card
             key={item.id}
             item={item}
-            isBookmark={true}
+            isBookmark={CheckBookmrks(item.id)}
             handleDeleteItem={handleDeleteItem}
             handleBookmrks={handleBookmrks}
           />
