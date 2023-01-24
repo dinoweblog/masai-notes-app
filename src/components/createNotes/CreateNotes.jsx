@@ -20,7 +20,9 @@ export const CreateNotes = ({ handleChange, handleSubmit, inputData }) => {
           placeholder="Description"
         />
 
-        <button type="submit">Save</button>
+        <button className="saveBtn" type="submit">
+          Save
+        </button>
       </form>
     </div>
   );

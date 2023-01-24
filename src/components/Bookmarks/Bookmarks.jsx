@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./style.css";
 
 export const Bookmarks = () => {
   const [data, setData] = useState([]);
@@ -23,20 +24,22 @@ export const Bookmarks = () => {
     <div>
       <h2>Bookmarks</h2>
 
-      {data.map((item) => (
-        <div className="card">
-          <h2>{item.title}</h2>
-          <p>{item.desc}</p>
-          <p>{item.date}</p>
-          <button
-            onClick={() => {
-              handleRemoveItem(item.id);
-            }}
-          >
-            Remove
-          </button>
-        </div>
-      ))}
+      <div className="bookmarks">
+        {data.map((item) => (
+          <div className="card">
+            <h2>{item.title}</h2>
+            <p>{item.desc}</p>
+            <p>{item.date}</p>
+            <button
+              onClick={() => {
+                handleRemoveItem(item.id);
+              }}
+            >
+              Remove
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

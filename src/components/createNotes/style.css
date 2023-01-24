@@ -7,10 +7,19 @@
   border: 0;
   padding: 7px 0;
   border-bottom: 1px solid #ccc;
+  margin-top: 10px;
 }
 
 .inputArea:focus {
   outline: none;
+}
+
+.saveBtn {
+  padding: 5px 15px;
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+  background-color: blue;
 }
 
 #description {

@@ -47,6 +47,7 @@ export const NotesComponent = () => {
   };
 
   const handleBookmrks = (id) => {
+    console.log(id);
     const preData = JSON.parse(localStorage.getItem("bookmarks")) || [];
 
     const filter = data.filter((item) => item.id === id);
@@ -54,7 +55,6 @@ export const NotesComponent = () => {
     preData.push(filter[0]);
 
     localStorage.setItem("bookmarks", JSON.stringify(preData));
-    getData();
   };
 
   useEffect(() => {
@@ -68,6 +68,7 @@ export const NotesComponent = () => {
         handleSubmit={handleSubmit}
         inputData={inputData}
       />
+      <h2 style={{ marginTop: "30px" }}>All Notes</h2>
       <div className="container">
         {data.map((item) => (
           <Card

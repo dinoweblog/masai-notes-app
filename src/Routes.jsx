@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { AppLayout } from "./AppLayout";
-import { Bookmarks } from "./components/Bookmarks";
+import { Bookmarks } from "./components/Bookmarks/Bookmarks";
 import { NotesComponent } from "./components/notesComponents/NotesComponent";
 
 const AppRoutes = () => (
