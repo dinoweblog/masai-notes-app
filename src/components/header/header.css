@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  list-style: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.header li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
