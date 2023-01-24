@@ -46,6 +46,17 @@ export const NotesComponent = () => {
     getData();
   };
 
+  const handleBookmrks = (id) => {
+    const preData = JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+    const filter = data.filter((item) => item.id === id);
+
+    preData.push(filter[0]);
+
+    localStorage.setItem("bookmarks", JSON.stringify(preData));
+    getData();
+  };
+
   useEffect(() => {
     getData();
   }, []);
@@ -64,6 +75,7 @@ export const NotesComponent = () => {
             item={item}
             isBookmark={true}
             handleDeleteItem={handleDeleteItem}
+            handleBookmrks={handleBookmrks}
           />
         ))}
       </div>
